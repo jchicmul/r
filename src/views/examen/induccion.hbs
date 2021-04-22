@@ -1,0 +1,108 @@
+<style>
+    .question {
+        padding: 5px 10px 5px 10px;
+        background: #08038c;
+        font-size: 20px;
+        border-radius: 20px;
+        margin: 10px 0 10px 0;
+        color: #f6f6f6;
+    }
+
+    .option {
+        width: 47%;
+        background: rgba(136, 133, 133, 0.7);
+        display: inline-block;
+        padding: 5px 0 5px 10px;
+        vertical-align: middle;
+        margin: 10px 0 10px 10px;
+        border-radius: 20px;
+    }
+
+    .option:hover {
+        background: #08038c;
+        color: #f6f6f6;
+    }
+
+    .next-btn {
+        border: none;
+        outline: none;
+        background: rgba(14, 44, 2, 0.7);
+        width: 100px;
+        height: 35px;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-left: 80%;
+
+        color: white;
+    }
+
+    .next-btn:hover {
+        background: #08038c;
+        color: #f6f6f6;
+    }
+
+    .option input:checked {
+        background: #08038c;
+        color: #000;
+    }
+
+    @media (max-width: 600px) {
+        .option {
+            width: 100%;
+            background: rgba(102, 99, 99, 0.7);
+            display: inline-block;
+            padding: 5px 0 5px 10px;
+            vertical-align: middle;
+            margin: 10px 0 10px 10px;
+            border-radius: 20px;
+        }
+
+        .next-btn {
+            border: none;
+            outline: none;
+            background: rgba(14, 44, 2, 0.7);
+            width: 80px;
+            height: 35px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 80%;
+            color: white;
+        }
+    }
+</style>
+
+
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h5><b>Bienvenido a la evaluación del Curso de Inducción</b></h5>
+                </div>
+                <div class="card-body">
+                    <div class="container" id="examenContainer">
+                        <h5>
+                            <p class="text-center"><b>Selecciona la respuesta correcta</b></p>
+                        </h5>
+                        <div class="question" id="question">Algo</div>
+                        <label class="option"><input type="radio" name="option" value="1"><span
+                                id="opt1"></span></label>
+                        <label class="option"><input type="radio" name="option" value="2"><span
+                                id="opt2"></span></label>
+                        <label class="option"><input type="radio" name="option" value="3"><span
+                                id="opt3"></span></label>
+                        <label class="option"><input type="radio" name="option" value="4"><span
+                                id="opt4"></span></label>
+                    </div>
+                    <div class="container result" id="result" style="display: none;"></div>
+                </div>
+                <div class="card-footer">
+                    <button class="next-btn" id="nextbtn" onclick="loadNextQuestion();">Siguiente</button>
+                    <a class="next-btn btn btn-success" id="homebtn" href="/home" style="display: none;">Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/resource/jquery-3.3.1.js"></script>
+<script src="/js/examen1.js" text/javascript"></script>

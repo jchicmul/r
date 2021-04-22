@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <form action="add" method="POST">
+                    <div class="card-header text-center">
+                        <i><B>ALTA CURSOS</B></i>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="id" placeholder="Número" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="nombre" placeholder="Nombre del Curso">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="url" class="form-control" placeholder="Dirección URL"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="dirigido" placeholder="A quién va dirigido">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-success btn-block" type="submit">Agregar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="jumbotron p-2">
+                <table id="listacursos" class="display table-responsive">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col" style="width:60px;">Nombre</th>
+                            <th scope="col"  style="width:50px;">URL</th>
+                            <th scope="col">Dirigido</th>
+                            <th scope="col">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each cursos }}
+                        <tr>
+                            <td>{{id}}</td>
+                            <td>{{nombre}}</td>
+                            <td>{{url}}</td>
+                            <td>{{dirigido}}</td>
+                            <td>
+                                <a href="/cursos/update/{{id}}"><i class="fa fa-pencil mx-2"
+                                        style="color:royalblue"></i></a>
+                                <a href="/cursos/delete/{{id}}"><i class="fa fa-trash-o" style="color:red"></i></a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/resource/jquery-3.3.1.js"></script>
+<script src="/resource/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#listacursos').DataTable();
+    });
+</script>

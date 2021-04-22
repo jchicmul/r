@@ -1,0 +1,37 @@
+<div class="container p-4">
+    <div class="col-md-4 mx-auto">
+        <div class="card text-center">
+            <div class="card-header">
+                <i><b>Mis Cursos</b></i>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Curso</th>
+                            <th>Dirigido</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Inducción <a href="cursos/inducciones"><i class="fa fa-eye mx-1"></i></a> <a
+                                    href="examen/induccion"><i class="fa fa-tasks mx-1"></i></a></th>
+                            <th>Todos</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Bienvenido',
+        text: '{{user.username}}',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true
+    });
+</script>

@@ -1,0 +1,146 @@
+<div class="container mt-2">
+    <div class="card">
+        <form action="/contrato/evaluacion/{{user.id}}" method="post">
+            <div class="card-header text-center">
+            <h3><b>Evaluación de desempeño del trabajador</b></h3>
+            <div class="row">
+                <div class="col-md-2 form-control" style="background-color:silver;"><b><label>{{id}}</label></b>
+                </div>
+                <div class="col-md-10 form-control" style="background-color: silver;"><b><label>{{Nombre}}</label></b>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="container">
+                <input type="hidden" name="numero" value="{{id}}">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="form-control">Disciplina</label>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" name="dc0" value="{{dc0}}">
+                            <option value="1">Malo</option>
+                            <option value="2">Regular</option>
+                            <option value="3">Bueno</option>
+                            <option value="4">Excelente</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-control">Puntualidad</label>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" name="dc1">
+                            <option value="1">Malo</option>
+                            <option value="2">Regular</option>
+                            <option value="3">Bueno</option>
+                            <option value="4">Excelente</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="form-control">Disciplina</label>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" name="dc2">
+                            <option value="1">Malo</option>
+                            <option value="2">Regular</option>
+                            <option value="3">Bueno</option>
+                            <option value="4">Excelente</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-control">Puntualidad</label>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" name="dc3">
+                            <option value="1">Malo</option>
+                            <option value="2">Regular</option>
+                            <option value="3">Bueno</option>
+                            <option value="4">Excelente</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="form-control">Disciplina</label>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" name="dc4">
+                            <option value="1">Malo</option>
+                            <option value="2">Regular</option>
+                            <option value="3">Bueno</option>
+                            <option value="4">Excelente</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-control">Puntualidad</label>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" name="dc5">
+                            <option value="1">Malo</option>
+                            <option value="2">Regular</option>
+                            <option value="3">Bueno</option>
+                            <option value="4">Excelente</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="form-control">Disciplina</label>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" name="dc6">
+                            <option value="1">Malo</option>
+                            <option value="2">Regular</option>
+                            <option value="3">Bueno</option>
+                            <option value="4">Excelente</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-control">Puntualidad</label>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" name="dc7">
+                            <option value="1">Malo</option>
+                            <option value="2">Regular</option>
+                            <option value="3">Bueno</option>
+                            <option value="4">Excelente</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="form-control">Disciplina</label>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" name="dc8">
+                            <option value="1">Malo</option>
+                            <option value="2">Regular</option>
+                            <option value="3">Bueno</option>
+                            <option value="4">Excelente</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-control">Puntualidad</label>
+                    </div>
+                    <div class="col-md-2">
+                        <select name="dc9" class="form-control">
+                            <option value="1">Malo</option>
+                            <option value="2">Regular</option>
+                            <option value="3">Bueno</option>
+                            <option value="4">Excelente</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <textarea name="comentario" class="form-control" placeholder="Comentarios"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer d-flex">
+            <button class="btn btn-success ml-auto">Calificar</button>
+        </div>
+        </form>
+    </div>
+</div>

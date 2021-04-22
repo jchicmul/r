@@ -1,0 +1,34 @@
+{
+  "name": "nodeapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "excel4node": "^1.7.2",
+    "exceljs": "^3.9.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.3",
+    "express-mysql-session": "^2.1.4",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.4.0",
+    "handlebars-helpers": "^0.10.0",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "nodetable": "^1.0.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sweetalert2": "^9.17.1",
+    "timeago.js": "^4.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}

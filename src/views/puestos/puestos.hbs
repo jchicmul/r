@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <form action="add" method="POST">
+                    <div class="card-header text-center">
+                        <i>ALTA PUESTOS</i>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="idd" placeholder="Número" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="deptod" placeholder="Departamento">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="puestod" placeholder="Puesto">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="salariod" placeholder="Salario">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-success btn-block" type="submit">Agregar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="jumbotron p-2">
+                <table id="listaSalario" class="display table-sm">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Departamento</th>
+                        <th scope="col">Puesto</th>
+                        <th scope="col">Salario</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    {{#each puestos }}
+                    <tr>
+                        <td>{{idd}}</td>
+                        <td>{{deptod}}</td>
+                        <td>{{puestod}}</td>
+                        <td>{{salariod}}</td>
+                        <td>
+                            <a href="/puestos/update/{{idd}}"><i class="fa fa-pencil mx-4" style="color:royalblue"></i></a>
+                        <a href="/puestos/delete/{{idd}}"><i class="fa fa-trash-o" style="color:red"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>

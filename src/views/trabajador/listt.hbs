@@ -1,0 +1,281 @@
+<div class="container mt-2">
+    <a href="/trabajador/add" class="btn btn-success animated shake"><i class="fa fa-user-plus"></i> Nuevo</a>
+    <a href="/trabajador/excel" class="btn btn-success animated shake ml-auto"><i class="fa fa-user-plus"></i> Excel</a>
+    <a href="#" onclick="llenarPuestos();" data-toggle="modal" data-target="#addTrabajador"
+        class="btn btn-success animated shake"><i class="fa fa-user-plus"></i> Nuevo</a>
+</div>
+
+<div class="container mx-auto mt-4">
+    <div class="jumbotron p-2">
+        <table id="listaTrab" class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Puesto</th>
+                    <th>Alta</th>
+                    <th>Baja</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each trabajadores}}
+                <tr id="{{id}}">
+                    <th>{{id}}</th>
+                    <th>{{Nombre}}</th>
+                    <th>{{puestod}}</th>
+                    <th>{{ingreso}}</th>
+                    <th>{{baja}}</th>
+                    <th>
+                        <a href="#" onclick="datoContrato('{{id}}');" data-toggle="modal" data-target="#addContrato"><i
+                                class="fa fa-clipboard mr-2"></i></a>
+                        <a href="#" onclick="mostrarUsuarios('{{id}}');" data-toggle="modal" data-target="#addSupervisor"><i
+                                class="fa fa-street-view mr-2"></i></a>
+                                {{#iss baja '0'}}
+                                <a href="#" title="Reingreso" onclick="mostraTrabajador('{{id}}');" data-toggle="modal" data-target="#addReingreso"><i
+                                class="fa fa-thumbs-up" style="color: green;"></i></a>
+                                {{else}}
+                                <a href="#" title="Baja" onclick="mostrarUsuarios('{{id}}');" data-toggle="modal" data-target="#addBaja"><i
+                                class="fa fa-thumbs-down" style="color: red;"></i></a>
+                                {{/iss}}
+                                <a href="#" onclick="datoo('{{id}}');" data-toggle="modal" data-target="#addContrato"><i
+                                class="fa fa-clipboard mr-2"></i></a>
+                    </th>
+                </tr>
+                {{/each}}
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="addTrabajador" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">REGISTRAR TRABAJADOR</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row form-group">
+                    <div class="col-md-2">
+                        <input class="form-control" type="text" name="id" id="id" placeholder="#" autofocus>
+                    </div>
+                    <div class="col-md-3">
+                        <input class="form-control" type="text" name="paterno" id="paterno" placeholder="PATERNO">
+                    </div>
+                    <div class="col-md-3">
+                        <input class="form-control" type="text" name="materno" id="materno" placeholder="MATERNO">
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" type="text" name="nombre" id="nombre" placeholder="NOMBRES(S)">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-4">
+                        <input class="form-control" type="text" name="nss" id="nss" placeholder="NSS">
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" type="text" name="rfc" id="rfc" placeholder="RFC">
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" type="text" name="curp" id="curp" placeholder="CURP">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-4">
+                        <SELECt name="tipoc" id="tipoc" class="form-control">
+                            <option value="1">EVENTUAL</option>
+                            <option value="2">PLANTA</option>
+                        </SELECt>
+                    </div>
+                    <div class="col-md-4">
+                        <SELECt name="tipot" id="tipot" class="form-control">
+                            <option value="1">CONFIANZA</option>
+                            <option value="2">SINDICALIZADO</option>
+                            <option value="3">EJECUTIVO</option>
+                        </SELECt>
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" type="date" name="ingreso" id="ingreso" placeholder="FECHA INGRESO">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-4">
+                        <select name="salario" id="salario" class="form-control">
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" id="direccion" class="form-control" placeholder="DIRECCIÓN">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" id="colonia" class="form-control" placeholder="COLONIA">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" onclick="agregarTrabajador();" class="btn btn-warning">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addContrato" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">AGREGAR CONTRATOR</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" class="form-control text-center" id="numeroc" readonly>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control text-center" id="nombrec" readonly>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="puestoc"></select>
+                </div>
+                <div class="form-group">
+                    <label>Tipo de contrato</label>
+                    <select name="tm" id="tm" class="form-control">
+                        <option value="R">Reingreso</option>
+                        <option value="A">Alta</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" onclick="agregaContrato();" class="btn btn-warning">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addSupervisor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">AGREGAR SUPERVISOR</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" class="form-control text-center" name="numeros" id="numeros" value="{{id}}"
+                        readonly>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control text-center" name="nombres" id="nombres" value="{{Nombre}}"
+                        readonly>
+                </div>
+                <div class="form-group">
+                    <select name="encargado" id="encargado" class="form-control">
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" onclick="agregaSupervisor();" class="btn btn-warning">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addBaja" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">BAJA DE TRABAJADOR</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" class="form-control text-center" name="numeroB" id="numeroB" value="{{id}}"
+                        readonly>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control text-center" name="nombreB" id="nombreB" value="{{Nombre}}"
+                        readonly>
+                </div>
+                <div class="form-group">
+                    <select name="tb" id="tb" class="form-control">
+                        <option value="RN">Renuncia voluntaria</option>
+                        <option value="TC">Termino de contrato</option>
+                        <option value="AF">Acumulación de faltas</option>
+                        <option value="AL">Abandono laboral</option>
+                        <option value="B4">B4</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="date" id="fbaja" class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" onclick="agregaBaja();" class="btn btn-warning">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addReingreso" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">REINGRESO DE TRABAJADOR</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" class="form-control text-center" name="numeroR" id="numeroR" readonly>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control text-center" name="nombreR" id="nombreR" readonly>
+                </div>
+                <div class="form-group">
+                    <select name="puestoR" id="puestoR" class="form-control">
+                        
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="date" id="freingreso" class="form-control">
+                </div>
+                <div class="form-group">
+                    <SELECt name="tipocR" id="tipocR" class="form-control">
+                            <option value="1">EVENTUAL</option>
+                            <option value="2">PLANTA</option>
+                        </SELECt>
+                </div>
+                <div class="form-group">
+                    <SELECt name="tipotR" id="tipotR" class="form-control">
+                            <option value="1">CONFIANZA</option>
+                            <option value="2">SINDICALIZADO</option>
+                            <option value="3">EJECUTIVO</option>
+                        </SELECt>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" onclick="agregaReingreso();" class="btn btn-warning">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>

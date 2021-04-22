@@ -1,0 +1,200 @@
+body {
+    background: #667db6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'IBM Plex Serif', serif;
+    font-size: medium;
+    overflow: auto;
+}
+
+.index {
+    width: 100%;
+    height: 140%;
+}
+
+.masthead {
+    color:#0000ff;
+    min-height: 40rem;
+    width: 100%;
+    height: 100%;
+    padding-top: 8rem;
+    background: url('/img/oficina4.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.masthead h1 {
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 992px) {
+    .masthead h1 {
+        font-size: 5.5rem;
+    }    
+}
+
+#listacursos {
+        overflow: scroll;
+        font-size: 14px;
+        height:400px;
+        width:700px;
+    }
+
+
+    section {
+        position: relative;
+        min-height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        transition: 0.5s;
+    }
+    
+    section .containers {
+        position: relative;
+        width: 800px;
+        height: 500px;
+        background: #fff;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+    
+    section .containers .user {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+    
+    section .containers .user .imgBx {
+        position: relative;
+        width: 50%;
+        height: 100%;
+        transition: 0.5s;
+    }
+    
+    section .containers .user .imgBx img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    section .containers .user .formBx {
+        position: relative;
+        width: 50%;
+        height: 100%;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        transition: 0.5s;
+    }
+    
+    section .containers .user .formBx h2 {
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 10px;
+        color: #555;
+    }
+    
+    section .containers .user .formBx input {
+        width: 100%;
+        padding: 10px;
+        background: #f5f5f5;
+        color: #333;
+        border: none;
+        font-size: 14px;
+        margin: 8px 0;
+        letter-spacing: 1px;
+        font-weight: 300;
+    }
+    
+    section .containers .user .formBx input[type="submit"] {
+        max-width: 100px;
+        background: #677eff;
+        color: #fff;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        transition: 0.5s;
+    }
+    
+    section .containers .user.signupBx .formBx input[type="submit"] {
+        background: #e73e49;
+    }
+    
+    section .containers .user .formBx .signup {
+        position: relative;
+        margin-top: 20px;
+        font-size: 12px;
+        letter-spacing: 1px;
+        color: #555;
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+    
+    section .containers .user .formBx .signup a {
+        font-weight: 600;
+        text-decoration: none;
+        color: #577eff;
+    }
+    
+    section .containers .signupBx {
+        pointer-events: none;
+    }
+    
+    section .containers.active .signupBx {
+        pointer-events: initial;
+    }
+    
+    section .containers .signupBx .formBx {
+        top: 100%;
+    }
+    
+    section .containers.active .signupBx .formBx {
+        top: 0;
+    }
+    
+    section .containers .signupBx .imgBx {
+        top: -100%;
+        transition: 0.5s;
+    }
+    
+    section .containers.active .signupBx .imgBx {
+        top: 0;
+    }
+    
+    section .containers .signinBx .formBx {
+        top: 0;
+    }
+    
+    section .containers.active .signinBx .formBx {
+        top: 100%;
+    }
+    
+    section .containers .signinBx .imgBx {
+        top: 0;
+        transition: 0.5s;
+    }
+    
+    section .containers.active .signinBx .imgBx {
+        top: -100%;
+    }

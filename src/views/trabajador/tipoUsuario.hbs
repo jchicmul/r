@@ -1,0 +1,33 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card animated flipInY">
+                <form action="/trabajador/usuario" method="post">
+                    <div class="card-header text-center">
+                        AGREGAR TIPO DE USUARIO
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <input type="text" class="form-control text-center" name="numero" value="{{id}}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control text-center" name="nombre" value="{{Nombre}}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <select name="usuario" id="usuario" class="form-control">
+                                <option value="1">COLABORADOR</option>
+                                <option value="2">SUPERVISOR</option>
+                                <option value="3">GERENCIA</option>
+                                <option value="4">ADMINISTRATIVA</option>
+                                <option value="5">RECURSOS</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary btn-block">Agregar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

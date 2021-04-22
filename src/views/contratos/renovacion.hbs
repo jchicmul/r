@@ -1,0 +1,207 @@
+<div class="container mx-auto mt-4">
+    <div class="jumbotron p-2 mx-auto" style="width: 80%;">
+        <table id="listaRenovacion" class="display table-responsive">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Puesto</th>
+                    <th>Alta</th>
+                    <th>Num Contrato</th>
+                    <th>Vencimiento</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each contratos}}
+                <tr>
+                    <th>{{id}}</th>
+                    <th>{{Nombre}}</th>
+                    <th>{{puestod}}</th>
+                    <th>{{ingreso}}</th>
+                    <th>{{numcon}}</th>
+                    <th>{{termino}}</th>
+                    <th>
+                        <a href="#" onclick="mostrarTrabEvaluar('{{id}}');" data-toggle="modal" data-target="#renovacionModal"><i
+                                class="fa fa-list"></i></a>
+                    </th>
+                </tr>
+                {{/each}}
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<!-- Modal Lista renovaciones-->
+<div class="modal fade" id="renovacionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title ml-auto" id="exampleModalLabel" style="color: rgb(12, 12, 126);">Evaluación de desempeño</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row form-group">
+                        <div class="col-md-2 form-control text-center" style="background-color:silver;">
+                            <b><label id="renovacionId"></label></b>
+                        </div>
+                        <div class="col-md-10 form-control text-center" style="background-color: silver;">
+                            <b><label id="renovacionNombre"></label></b>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="numero" id="numero" value="{{user.id}}">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="form-control">Disciplina</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" name="dc0" id="dc0">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-control">Puntualidad</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" name="dc1" id="dc1">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="form-control">Disciplina</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" name="dc2" id="dc2">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-control">Puntualidad</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" name="dc3" id="dc3">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="form-control">Disciplina</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" name="dc4" id="dc4">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-control">Puntualidad</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" name="dc5" id="dc5">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="form-control">Disciplina</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" name="dc6" id="dc6">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-control">Puntualidad</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" name="dc7" id="dc7">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label class="form-control">Disciplina</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" name="dc8" id="dc8">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-control">Puntualidad</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select name="dc9" id="dc9" class="form-control">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <textarea class="form-control" id="comentarios" rows="3" placeholder="Comentarios" required></textarea>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Autoriza la renovación?</label>
+                            <select class="form-control" id="aut">
+                                <option value="SI">SI</option>
+                                <option value="NO">NO</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Días autorizados?</label>
+                            <select class="form-control" id="diasR">
+                                <option value="15">15 DIAS</option>
+                                <option value="30">30 DIAS</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button onclick="calificarContrato();" type="button" class="btn btn-primary">Calificar</button>
+            </div>
+        </div>
+    </div>
+</div>

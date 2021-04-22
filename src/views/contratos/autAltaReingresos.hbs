@@ -1,0 +1,96 @@
+<div class="container mx-auto mt-4">
+    <div class="jumbotron p-2">
+        <table id="trabajadorEvaluado" class="display table-sm">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Departamento</th>
+                    <th>Puesto</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each autorizado}}
+                <tr>
+                    <th>{{id}}</th>
+                    <th>{{Nombre}}</th>
+                    <th class="text-center">{{deptod}}</th>
+                    <th class="text-center">{{puestod}}</th>
+                    <th>
+                        <a href="#" onclick="datosExpediente('{{id}}');" title="AUTORIZAR" data-toggle="modal"
+                            data-target="#vistaExpedientes"><i class="fa fa-address-card-o"></i></a>
+                    </th>
+                </tr>
+                {{/each}}
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="vistaExpedientes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title ml-auto" id="exampleModalLabel">Revisar Expediente</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row form-group">
+                        <div class="col-md-2">
+                            <img src="/img/1.jpg" width="110px" height="120px">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <b><label class="form-control" id="idx">501</label></b>
+                                </div>
+                                <div class="col-md-10">
+                                    <b><label class="form-control" id="nombrex">akgi</label></b>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <b><label class="form-control" id="deptox">501</label></b>
+                                </div>
+                                <div class="col-md-6">
+                                    <b><label class="form-control" id="puestox">akgi</label></b>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="container p-1 mx-4" style="background-color: green; border-radius:10px;">
+                                    <label style="color: rgb(224, 224, 241);">Días autorizados?</label>
+                                    <select class="form-control mb-2" id="diasR">
+                                        <option value="15">15 DÍAS</option>
+                                        <option value="28" selected>28 DÍAS</option>
+                                        <option value="30">30 DÍAS</option>
+                                        <option value="60">60 DÍAS</option>
+                                        <option value="90">90 DÍAS</option>
+                                        <option value="120">120 DÍAS</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <embed src="/pdf/libro.pdf" type="application/pdf" width="100%" height="300px" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" onclick="cancelaX('{{user.nvl}}');" class="btn btn-danger">Cancelar</button>
+                    <button type="button" onclick="autorizaX('{{user.nvl}}');" class="btn btn-primary">Autorizar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

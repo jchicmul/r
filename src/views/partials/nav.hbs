@@ -1,0 +1,181 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Recursos Humanos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            {{#if user}}
+
+            {{#is user.nvl '1'}}
+            <li class="nav-item">
+                <a href="/home" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/home" class="nav-link">Cursos</a>
+            </li>
+            <li class="nav-item dropdown mr-2">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" style="color:seagreen;">
+                    <i class="fa fa-user-circle" alt="{{user.username}}"></i> {{user.username}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="container">
+                        <a class="dropdown-item" href="/logout" style="color:red">
+                            <i class="fa fa-expeditedssl"></i> Salir</a>
+                    </div>
+                </div>
+            </li>
+            {{/is}}
+
+             {{#is user.nvl '2'}}
+            <li class="nav-item">
+                <a href="/home" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/home" class="nav-link">Cursos</a>
+            </li>
+            <li class="nav-item dropdown mr-2">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" style="color:seagreen;">
+                    <i class="fa fa-user-circle" alt="{{user.username}}"></i> {{user.username}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="container">
+                        <a class="dropdown-item" href="/logout" style="color:red">
+                            <i class="fa fa-expeditedssl"></i> Salir</a>
+                    </div>
+                </div>
+            </li>
+            {{/is}}
+
+            {{#is user.nvl '3'}}
+            <li class="nav-item">
+                <a href="/home" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/home" class="nav-link">Cursos</a>
+            </li>
+            <li class="nav-item">
+                <a href="/contrato/contratos/{{user.id}}" class="nav-link">Renovaciones</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Autorizaciones
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/contrato/autorizacion/{{user.nvl}}">Renovaciones</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/contrato/autorizacionR/{{user.nvl}}">Altas y Reingresos</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Finiquitos</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Nivel Usuario</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown mr-2">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" style="color:seagreen;">
+                    <i class="fa fa-user-circle" alt="{{user.username}}"></i> {{user.username}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="container">
+                        <a class="dropdown-item" href="/logout" style="color:red">
+                            <i class="fa fa-expeditedssl"></i> Salir</a>
+                    </div>
+                </div>
+            </li>
+            {{/is}}
+
+            {{#is user.nvl '4'}}
+            <li class="nav-item">
+                <a href="/home" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/home" class="nav-link">Cursos</a>
+            </li>
+            <li class="nav-item">
+                <a href="/contrato/contratos/{{user.id}}" class="nav-link">Renovaciones</a>
+            </li>
+             <li class="nav-item">
+                <a href="/contrato/autorizacion/{{user.id}}" class="nav-link">Autorizaciones</a>
+            </li>
+            <li class="nav-item dropdown mr-2">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" style="color:seagreen;">
+                    <i class="fa fa-user-circle" alt="{{user.username}}"></i> {{user.username}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="container">
+                        <a class="dropdown-item" href="/logout" style="color:red">
+                            <i class="fa fa-expeditedssl"></i> Salir</a>
+                    </div>
+                </div>
+            </li>
+            {{/is}}
+
+            {{#is user.nvl '5'}}
+            <li class="nav-item">
+                <a href="/home" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/cursos/cursos" class="nav-link">Cursos</a>
+            </li>
+            <li class="nav-item">
+                <a href="/contrato/contratos/{{user.id}}" class="nav-link">Renovaciones</a>
+            </li>
+             <li class="nav-item">
+                <a href="/contrato/autorizacion/{{user.id}}" class="nav-link">Autorizaciones</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Capturas
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/trabajador/">Trabajadores</a>
+                    <a class="dropdown-item" href="/puestos/add">Puestos</a>
+                    <a class="dropdown-item" href="/cursos/add">Cursos</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/usuarios/usuarios">Nivel Usuario</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Reportes
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/reportes/reingresos/">Altas y Reingresos</a>
+                    <a class="dropdown-item" href="/puestos/add">Puestos</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown mr-2">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" style="color:seagreen;">
+                    <i class="fa fa-user-circle" alt="{{user.username}}"></i> {{user.username}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="container">
+                        <a class="dropdown-item" href="/logout" style="color:red">
+                            <i class="fa fa-expeditedssl"></i> Salir</a>
+                    </div>
+                </div>
+            </li>
+            {{/is}}
+            {{else}}
+            <li class="nav-item">
+                <a href="/signin" class="nav-link">Ingresar</a>
+            </li>
+            <li class="nav-item">
+                <a href="/signup" class="nav-link">Registro</a>
+            </li>
+            {{/if}}
+        </ul>
+    </div>
+</nav>

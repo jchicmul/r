@@ -1,0 +1,65 @@
+<div class="container mx-auto mt-4">
+    <div class="jumbotron p-2">
+        <table id="listaUsuarios" class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Nivel</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each usuarios}}
+                <tr>
+                    <th>{{id}}</th>
+                    <th>{{username}}</th>
+                    <th>{{nvl}}</th>
+                    <th>
+                        <a href="#" onclick="mostrarUsuario('{{id}}');" data-toggle="modal"
+                            data-target="#modalCambioUsuario"><i class="fa fa-clipboard mr-2"></i></a>
+                    </th>
+                </tr>
+                {{/each}}
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<!-- Modal Cambio de Nivel de Usuarios-->
+<div class="modal fade" id="modalCambioUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cambio de nivel de Usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label id="idU" class="form-control text-center" style="background-color: rgb(228, 220, 220);"></label>
+                </div>
+                <div class="form-group">
+                    <label id="nombreU" class="form-control text-center" style="background-color: rgb(228, 220, 220);"></label>
+                </div>
+                <div class="form-group">
+                    <select name="nvl" id="nvl" class="form-control">
+                        <option value="1">Trabajador</option>
+                        <option value="2">Supervisor</option>
+                        <option value="3">Gerencia General</option>
+                        <option value="4">Gerencia Administrativa</option>
+                        <option value="5">RH</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" onclick="cambioNivel();" class="btn btn-primary">Cambiar</button>
+            </div>
+        </div>
+    </div>
+</div>

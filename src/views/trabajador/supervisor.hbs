@@ -1,0 +1,34 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card animated flipInY">
+                <form action="/trabajador/supervisor" method="post">
+                    <div class="card-header text-center">
+                        AGREGAR SUPERVISOR
+                    </div>
+                    <div class="card-body">
+                        {{#jefe.trabajador}}
+                            <div class="form-group">
+                            <input type="text" class="form-control text-center" name="numero" value="{{id}}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control text-center" name="nombre" value="{{Nombre}}"
+                                readonly>
+                        </div>
+                        {{/jefe.trabajador}}
+                        <div class="form-group">
+                            <select name="encargado" id="encargado" class="form-control">
+                                {{#each jefe.supervisor}}
+                                <option value="{{id}}">{{username}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary btn-block">Agregar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

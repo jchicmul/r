@@ -1,0 +1,213 @@
+<div class="container mx-auto mt-4">
+    <div class="jumbotron p-2">
+        <table id="trabajadorEvaluado" class="display table-sm">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Alta</th>
+                    <th>Num Contrato</th>
+                    <th>Días Contrato</th>
+                    <th>Vencimiento</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each autorizado}}
+                <tr>
+                    <th>{{id}}</th>
+                    <th>{{Nombre}}</th>
+                    <th>{{ingreso}}</th>
+                    <th class="text-center">{{numcon}}</th>
+                    <th class="text-center">{{diasr}}</th>
+                    <th>{{termino}}</th>
+                    <th>
+                        {{#is aut 'SI'}}
+                        <a href="#" onclick="mostrarEvaluacion({{clave}});" title="AUTORIZAR" data-toggle="modal"
+                            data-target="#vistaEvaluadoModal"><i class="fa fa-check" style="color: green;"></i></a>
+                        {{else}}
+                        <a href="#" onclick="mostrarEvaluacion({{clave}});" title="AUTORIZAR" data-toggle="modal"
+                            data-target="#vistaEvaluadoModal"><i class="fa fa-check" style="color: red;"></i></a>
+                        {{/is}}
+                    </th>
+                </tr>
+                {{/each}}
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="vistaEvaluadoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title ml-auto" id="exampleModalLabel">Revisar Evaluación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row form-group">
+                        <div class="col-md-2 form-control text-center" style="background-color:silver;">
+                            <b><label id="idE"></label></b>
+                        </div>
+                        <div class="col-md-10 form-control text-center" style="background-color: silver;">
+                            <b><label id="nombreE"></label></b>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="form-control">Disciplina</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" id="dc0">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-control">Puntualidad</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" id="dc1">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="form-control">Disciplina</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" id="dc2">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-control">Puntualidad</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" id="dc3">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="form-control">Disciplina</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" id="dc4">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-control">Puntualidad</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" id="dc5">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="form-control">Disciplina</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" id="dc6">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-control">Puntualidad</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" id="dc7">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="form-control">Disciplina</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" id="dc8">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-control">Puntualidad</label>
+                        </div>
+                        <div class="col-md-2">
+                            <select id="dc9" class="form-control">
+                                <option value="1">Malo</option>
+                                <option value="2">Regular</option>
+                                <option value="3">Bueno</option>
+                                <option value="4">Excelente</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <textarea id="comentario" class="form-control" placeholder="Comentarios"></textarea>
+                    </div>
+                    <div class="row form-group p-2" style="background-color: rgb(35, 134, 80);">
+                        <div class="col-sm-6">
+                            <label style="color: ghostwhite;">Autoriza la renovación?</label>
+                            <select class="form-control mt-0" id="aut">
+                                <option value="SI">SI</option>
+                                <option value="NO">NO</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6">
+                            <label style="color: ghostwhite;">Días autorizados?</label>
+                            <select class="form-control mt-0" id="diasR">
+                                <option value="15">15 DIAS</option>
+                                <option value="30">30 DIAS</option>
+                                <option value="60">60 DIAS</option>
+                                <option value="90">90 DIAS</option>
+                                <option value="120">120 DIAS</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" onclick="autorizaG({{user.nvl}});" class="btn btn-primary">Autorizar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

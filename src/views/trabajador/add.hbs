@@ -1,0 +1,76 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card animated flipInY">
+                <form action="/trabajador/add" method="post">
+                    <div class="card-header text-center">
+                        ALTA TRABAJADOR
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <input class="form-control" type="text" name="id" placeholder="#" autofocus>
+                            </div>
+                            <div class="col-md-3">
+                                <input class="form-control" type="text" name="paterno" placeholder="PATERNO">
+                            </div>
+                            <div class="col-md-3">
+                                <input class="form-control" type="text" name="materno" placeholder="MATERNO">
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" name="nombre" placeholder="NOMBRES(S)">
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" name="nss" placeholder="NSS">
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" name="rfc" placeholder="RFC">
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" name="curp" placeholder="CURP">
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-4">
+                                <SELECt name="tipoc" class="form-control">
+                                    <option value="1">EVENTUAL</option>
+                                    <option value="2">PLANTA</option>
+                                </SELECt>
+                            </div>
+                            <div class="col-md-4">
+                                <SELECt name="tipot" class="form-control">
+                                    <option value="1">CONFIANZA</option>
+                                    <option value="2">SINDICALIZADO</option>
+                                    <option value="3">EJECUTIVO</option>
+                                </SELECt>
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-control" type="date" name="ingreso" placeholder="FECHA INGRESO">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-4">
+                                <select name="salario" id="salario" class="form-control">
+                                    {{#each puestos}}
+                                    <option value="{{idd}}">{{puestod}}({{idd}})</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="DIRECCIÓN">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="COLONIA">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary mx-auto">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
