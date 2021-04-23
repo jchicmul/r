@@ -9,7 +9,6 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src",
-    "postinstall": "npm run build",
     "start": "node src/index.js"
   },
   "keywords": [],
